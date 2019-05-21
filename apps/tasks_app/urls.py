@@ -2,20 +2,8 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.index),
-    path('<int:task_id>', views.show),
+    path('tasks/', views.index),
+    path('tasks/<int:task_id>', views.show),
+    path('tasks/<int:task_id>/delete', views.destroy),
+    path('people/', views.index_people),
 ]
-
-# from django.conf.urls import url
-# from . import views
-
-
-# urlpatterns = [
-#     url(r'^$', views.index),
-#     url(r'^new$', views.new),
-#     url(r'^create$', views.create),
-#     url(r'^(?P<id>\d+)$', views.show),
-#     url(r'^edit/(?P<id>\d+)$', views.edit),
-#     url(r'^update/(?P<id>\d+)$', views.update),
-#     url(r'^(?P<id>\d+)/delete$', views.destroy),
-# ]
